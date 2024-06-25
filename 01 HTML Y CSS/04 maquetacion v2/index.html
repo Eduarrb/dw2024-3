@@ -16,30 +16,26 @@
         }
         header {
             border: 3px solid blue;
-            /* border: 3px solid rgb(0,0,255); */
-            /* border: 3px solid #2980b9; */
             text-align: center;
             height: 50px;
         }
 
         section {
             border: 3px solid #CC6600;
+            display: flex;
+            /* 494px */
+            flex-wrap: wrap;
         }
-        /*
-            CSS -> CASCADE STYLE SHEET
-        */
-
-        /* 494px */
         section article {
             border: 3px solid #009900;
-            width: 341px;
-            display: inline-block;
+            /* width: 341px; */
+            width: calc(70% - 6px);
         }
 
         section aside {
             border: 3px solid #FF3333;
-            width: 141px;
-            display: inline-block;
+            /* width: 141px; */
+            width: calc(30% - 6px);
         }
 
         footer {
@@ -54,7 +50,8 @@
     <section>
         <article>
             ARTICLE
-        </article><aside>
+        </article>
+        <aside>
             ASIDE
         </aside>
     </section>
