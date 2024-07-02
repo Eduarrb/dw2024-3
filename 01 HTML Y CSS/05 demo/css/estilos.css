@@ -2,13 +2,22 @@ body {
     margin: 0;
 }
 
-nav div {
-    /* background-color: aqua; */
+/* CONSTANTES */
+.contenedor {
     width: 70%;
-    /* margin: 0 0 0 0; */
-    /* margin: 0 auto; */
     margin-left: auto;
     margin-right: auto;
+}
+
+/* NAV */
+
+nav div {
+    /* background-color: aqua; */
+    /* width: 70%; */
+    /* margin: 0 0 0 0; */
+    /* margin: 0 auto; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
     display: flex;
     justify-content: space-between;
     /* height: 190px; */
@@ -39,4 +48,138 @@ nav div ul li a {
     padding: 10px;
     /* background-color: aqua; */
     display: inline-block;
+}
+
+/* HEADER */
+/* DON'T REPEAT YOURSELF */
+
+header {
+    background-image: url(../img/portada.jpg);
+    /* padding: 150px 0; */
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-position: center;
+    background-size: cover;
+}
+
+header div h2 {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    color: #ff6818;
+    font-size: 88px;
+    /* text-transform: capitalize; */
+    line-height: 98px; /* = 0 */
+}
+
+header div p {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-size: 18px;
+    color: rgb(85, 92, 102);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+header div form {
+    display: flex;
+}
+
+header div form input {
+    font-size: 18px;
+    border: none;
+    outline: 0;
+    padding: 12px 10px;
+}
+
+header div form button {
+    border: none;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    background-color: #ff6818;
+    color: white;
+    padding: 12px 40px;
+    cursor: pointer;
+}
+
+/* SECTION */
+section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#articleBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#article1 {
+    background-color: #ff6818;
+}
+
+#article2 {
+    background-color: #f43701;
+}
+
+#article3 {
+    background-color: #292d31;
+}
+
+#article4 {
+    background-color: #555c66;
+}
+
+section div article {
+    color: white;
+    padding: 20px 35px 40px 35px;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+section div article h2, 
+section div article h3 {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+section div article h2{
+    font-size: 60px;
+}
+
+section div article h3 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+section div article p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 26px;
+}
+
+section div article div {
+    width: 64px;
+    height: 64px;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+#article1 i {
+    color: #ff6818;
+}
+
+#article2 i {
+    color: #f43701;
+}
+
+#article3 i {
+    color: #292d31;
+}
+
+#article4 i {
+    color: #555c66;
 }
