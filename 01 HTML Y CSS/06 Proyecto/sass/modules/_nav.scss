@@ -1,0 +1,29 @@
+.nav {
+    &__welcome {
+        background-color: #f4f4f4;
+        &__contenedor {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.4rem;
+            &--msj {
+                color: $color-secondary;
+            }
+            &__access {
+                &--account {
+                    color: $color-secondary;
+                    i {
+                        margin-right: .5rem;
+                    }
+                }
+                &--moneda,
+                &--idioma {
+                    border: none;
+                    outline: 0;
+                    cursor: pointer;
+                    background-color: #f4f4f4;
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+}
