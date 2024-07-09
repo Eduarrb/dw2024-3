@@ -20,3 +20,8 @@ html {
 a {
     text-decoration: none;
 }
+
+a,
+span {
+    display: inline-block;
+}
