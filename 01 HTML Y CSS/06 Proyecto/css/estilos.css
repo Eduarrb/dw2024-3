@@ -376,6 +376,7 @@ span {
   display: flex;
   justify-content: space-between;
   font-size: 1.4rem;
+  align-items: center;
 }
 .nav__welcome__contenedor--msj {
   color: rgb(51, 51, 51);
@@ -493,6 +494,125 @@ span {
 }
 .nav__search__contenedor__form i {
   color: rgb(102, 102, 102);
+}
+.nav__search__contenedor__phone {
+  font-size: 1.6rem;
+}
+.nav__search__contenedor__phone i {
+  color: rgb(0, 132, 198);
+}
+.nav__search__contenedor__phone span {
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.header__portada {
+  position: relative;
+}
+.header__portada--img {
+  display: block;
+  width: 100%;
+}
+.header__portada__contenido {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120rem;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.header__portada__contenido__box {
+  color: white;
+  text-align: center;
+}
+.header__portada__contenido__box--t1, .header__portada__contenido__box--t2, .header__portada__contenido__box--t3 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.header__portada__contenido__box--t1 {
+  font-size: 1.6rem;
+  margin-bottom: -0.7rem;
+}
+.header__portada__contenido__box--t2 {
+  font-size: 9rem;
+  margin-bottom: -4rem;
+}
+.header__portada__contenido__box--t3 {
+  font-size: 5rem;
+  margin-bottom: -0.7rem;
+}
+.header__portada__contenido__box--t4 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+}
+.header__portada__contenido__box--btn {
+  background-color: white;
+  font-size: 1.6rem;
+  color: rgb(51, 51, 51);
+  font-weight: 900;
+  text-transform: capitalize;
+  padding: 2rem 3rem 1.7rem 3rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+.header__portada__contenido__box--btn:hover {
+  background-color: rgb(51, 51, 51);
+  color: white;
+  transition: all 0.3s;
+}
+.header__ofertas {
+  display: flex;
+}
+.header__ofertas img {
+  display: block;
+  width: 25%;
+}
+
+.cards__contenedor {
+  display: flex;
+  column-gap: 3rem;
+  flex-wrap: wrap;
+}
+.cards__contenedor__item {
+  border: 2px solid #e5e5e5;
+  background-color: rgb(244, 244, 244);
+  width: calc(25% - 2.25rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
+.cards__contenedor__item i {
+  color: rgb(0, 132, 198);
+  font-size: 3rem;
+}
+.cards__contenedor__item--titulo {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  color: rgb(51, 51, 51);
+  margin-top: 2rem;
+}
+.cards__contenedor__item--descri {
+  font-size: 1.4rem;
+  color: rgb(51, 51, 51);
+}
+
+.productos {
+  padding-bottom: 5rem;
+}
+.productos__contenedor__submenu {
+  border-bottom: 0.2rem solid rgb(229, 229, 229);
+  padding-bottom: 1.5rem;
+}
+.productos__contenedor__submenu--link {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: rgb(51, 51, 51);
+}
+.productos__contenedor__submenu--link:not(:last-child) {
+  margin-right: 5rem;
 }
 
 /*# sourceMappingURL=estilos.css.map */

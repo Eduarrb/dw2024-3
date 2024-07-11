@@ -5,6 +5,7 @@
             display: flex;
             justify-content: space-between;
             font-size: 1.4rem;
+            align-items: center;
             &--msj {
                 color: $color-secondary;
             }
@@ -127,6 +128,16 @@
                 }
                 i {
                     color: $color-secondary-light;
+                }
+            }
+            &__phone {
+                font-size: 1.6rem;
+                i {
+                    color: $color-primary;
+                }
+                span {
+                    color: white;
+                    margin-left: .5rem;
                 }
             }
         }

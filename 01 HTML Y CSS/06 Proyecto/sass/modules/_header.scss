@@ -1,0 +1,68 @@
+.header {
+    &__portada {
+        position: relative;
+        &--img {
+            display: block;
+            width: 100%;
+        }
+        &__contenido {
+            // background-color: peru;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120rem;
+            transform: translate(-50%, -50%);
+            display: flex;
+            &__box {
+                color: white;
+                text-align: center;
+                // border: 3px solid black;
+                &--t1,
+                &--t2,
+                &--t3 {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+                &--t1 {
+                    font-size: 1.6rem;
+                    margin-bottom: -.7rem;
+                }
+                &--t2 {
+                    font-size: 9rem;
+                    margin-bottom: -4rem;
+                }
+                &--t3 {
+                    font-size: 5rem;
+                    margin-bottom: -.7rem;
+                }
+                &--t4 {
+                    font-size: 2.5rem;
+                    text-transform: capitalize;
+                    margin-bottom: 1.5rem;
+                }
+                &--btn {
+                    background-color: white;
+                    font-size: 1.6rem;
+                    color: $color-secondary;
+                    font-weight: 900;
+                    text-transform: capitalize;
+                    padding: 2rem 3rem 1.7rem 3rem;
+                    border-radius: .5rem;
+                    transition: all .3s;
+                    &:hover {
+                        background-color: $color-secondary;
+                        color: white;
+                        transition: all .3s;
+                    }
+                }
+            }
+        }
+    }
+    &__ofertas {
+        display: flex;
+        img {
+            display: block;
+            width: 25%;
+        }
+    }
+}
