@@ -1,5 +1,27 @@
 $font-khula: "Khula", sans-serif;
 
+/*
+    TAMAÑO DE FUENTE BASE ES DE 16PX
+    1REM => 16PX
+    1EM => 16PX
+
+    DIV -> FZ 15PX
+        SPAN -> 1EM -> 15PX
+
+    1200px / 16px => 75em
+    992px / 16px => 62em
+    768px / 16px => 48em
+    576px / 16px => 36em
+    420px / 16px => 26.25em
+    380px / 16px => 23.75em
+*/
+
+$bp-extraLarge: 75em; // 1200px
+$bp-large: 62em;
+$bp-medium: 48em;
+$bp-small: 36em;
+$bp-extraSmall: 26.25em;
+
 * {
     margin: 0;
     padding: 0;

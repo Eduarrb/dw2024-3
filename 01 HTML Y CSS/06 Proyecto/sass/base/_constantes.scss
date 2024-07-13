@@ -7,6 +7,13 @@ $color-secondary-light: rgb(102, 102, 102);
     // background-color: peru;
     margin-left: auto;
     margin-right: auto;
+    @media only screen and (max-width: $bp-extraLarge) {
+        max-width: 96rem;
+    }
+    @media only screen and (max-width: $bp-large){
+        max-width: 72rem;
+    }
+    
 }
 
 .p-1 {
