@@ -14,5 +14,76 @@
                 }
             }
         }
+        &__box {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 5rem;
+            // justify-content: center;
+            &__item {
+                width: 25%;
+                text-align: center;
+                padding: 0 2rem;
+                // &:nth-child(odd){
+                //     border-right: 1px solid rgba(black, .07);
+                // }
+                &__etiquetas {
+                    display: flex;
+                    justify-content: space-between;
+                    span {
+                        background-color: $color-primary;
+                        font-size: 1.4rem;
+                        color: white;
+                        padding: .2rem 1rem;
+                        border-radius: .3rem;
+                    }
+                }
+                &--img {
+                    display: block;
+                    width: 100%;
+                }
+                &--cat {
+                    font-size: 1.4rem;
+                    color: $color-secondary-light;
+                }
+                &--name {
+                    font-size: 1.6rem;
+                    color: $color-secondary;
+                    margin-top: 1.2rem;
+                    margin-bottom: 1rem;
+                }
+                &__stars {
+                    font-size: 1.2rem;
+                    color: $color-secondary;
+                }
+                &__precio {
+                    margin-top: 1.2rem;
+                    margin-bottom: 1.5rem;
+                    &--real {
+                        font-size: 1.6rem;
+                        color: $color-secondary-light;
+                        text-decoration: line-through;
+                    }
+                    &--oferta {
+                        font-size: 2rem;
+                        color: rgb(234,58, 60);
+                        font-weight: 700;
+                        margin-left: .5rem;
+                    }
+                }
+                &--btn {
+                    font-size: 1.4rem;
+                    color: $color-secondary;
+                    border: 1px solid rgb(229,229,229);
+                    padding: 1rem 2rem;
+                    border-radius: .3rem;
+                    transition: all .3s;
+                    &:hover {
+                        background-color: $color-secondary;
+                        color: white;
+                        transition: all .3s;
+                    }
+                }
+            }
+        }
     }
 }
