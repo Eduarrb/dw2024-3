@@ -1,4 +1,7 @@
 .nav {
+    position: fixed; // 0.1
+    z-index: 1;
+    width: 100%;
     &__welcome {
         background-color: #f4f4f4;
         &__contenedor {
@@ -6,8 +9,14 @@
             justify-content: space-between;
             font-size: 1.4rem;
             align-items: center;
+            @media only screen and (max-width: $bp-small) {
+                justify-content: center;
+            }
             &--msj {
                 color: $color-secondary;
+                @media only screen and (max-width: $bp-small) {
+                    display: none;
+                }
             }
             &__access {
                 &--account {
@@ -28,6 +37,8 @@
         }
     }
     &__menu {
+        background-color: white;
+        box-shadow: 0 .5rem 1.5rem rgba(black, .15);
         &__contenedor {
             display: flex;
             align-items: center;
@@ -56,7 +67,16 @@
                     display: flex;
                     margin-right: 7rem;
                     @media only screen and (max-width: $bp-large) {
-                        display: none;
+                        // display: none;
+                        position: absolute;
+                        background-color: rgba(black, .95);
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100vh;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
                     }
                     &__item {
                         list-style: none;
@@ -66,6 +86,10 @@
                             color: $color-secondary;
                             padding: 1.1rem 1.5rem .6rem 1.5rem;
                             font-weight: 700;
+                            @media only screen and (max-width: $bp-large){
+                                color: white;
+                                font-size: 2rem;
+                            }
                         }
                     }
                 }
@@ -112,6 +136,9 @@
     }
     &__search {
         background-color: $color-secondary;
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+        }
         &__contenedor {
             display: flex;
             justify-content: space-between;

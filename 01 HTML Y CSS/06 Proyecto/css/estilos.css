@@ -30,6 +30,11 @@ html {
   font-size: 62.5%;
   font-family: "Khula", sans-serif;
 }
+@media only screen and (max-width: 36em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 a {
   text-decoration: none;
@@ -54,6 +59,21 @@ span {
   .contenedor {
     max-width: 72rem;
   }
+}
+@media only screen and (max-width: 48em) {
+  .contenedor {
+    max-width: 54rem;
+  }
+}
+@media only screen and (max-width: 36em) {
+  .contenedor {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.d-none {
+  display: none;
 }
 
 .p-1 {
@@ -394,6 +414,11 @@ span {
   margin-right: 10rem;
 }
 
+.nav {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
 .nav__welcome {
   background-color: #f4f4f4;
 }
@@ -403,8 +428,18 @@ span {
   font-size: 1.4rem;
   align-items: center;
 }
+@media only screen and (max-width: 36em) {
+  .nav__welcome__contenedor {
+    justify-content: center;
+  }
+}
 .nav__welcome__contenedor--msj {
   color: rgb(51, 51, 51);
+}
+@media only screen and (max-width: 36em) {
+  .nav__welcome__contenedor--msj {
+    display: none;
+  }
 }
 .nav__welcome__contenedor__access--account {
   color: rgb(51, 51, 51);
@@ -418,6 +453,10 @@ span {
   cursor: pointer;
   background-color: #f4f4f4;
   color: rgb(51, 51, 51);
+}
+.nav__menu {
+  background-color: white;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
 }
 .nav__menu__contenedor {
   display: flex;
@@ -453,7 +492,15 @@ span {
 }
 @media only screen and (max-width: 62em) {
   .nav__menu__contenedor__right__box {
-    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.95);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 .nav__menu__contenedor__right__box__item {
@@ -465,6 +512,12 @@ span {
   color: rgb(51, 51, 51);
   padding: 1.1rem 1.5rem 0.6rem 1.5rem;
   font-weight: 700;
+}
+@media only screen and (max-width: 62em) {
+  .nav__menu__contenedor__right__box__item--link {
+    color: white;
+    font-size: 2rem;
+  }
 }
 .nav__menu__contenedor__right__cart {
   background-color: rgb(0, 132, 198);
@@ -504,6 +557,11 @@ span {
 }
 .nav__search {
   background-color: rgb(51, 51, 51);
+}
+@media only screen and (max-width: 36em) {
+  .nav__search {
+    display: none;
+  }
 }
 .nav__search__contenedor {
   display: flex;
@@ -560,6 +618,14 @@ span {
   margin-left: 0.5rem;
 }
 
+.header {
+  padding-top: 20.2rem;
+}
+@media only screen and (max-width: 36em) {
+  .header {
+    padding-top: 14.3rem;
+  }
+}
 .header__portada {
   position: relative;
 }
@@ -671,6 +737,11 @@ span {
     width: 50%;
   }
 }
+@media only screen and (max-width: 36em) {
+  .header__ofertas img {
+    width: 100%;
+  }
+}
 
 .cards__contenedor {
   display: flex;
@@ -690,6 +761,11 @@ span {
 @media only screen and (max-width: 62em) {
   .cards__contenedor__item {
     width: calc(50% - 1.5rem);
+  }
+}
+@media only screen and (max-width: 36em) {
+  .cards__contenedor__item {
+    width: 100%;
   }
 }
 .cards__contenedor__item i {
@@ -724,6 +800,16 @@ span {
 .productos__contenedor__submenu--link:not(:last-child) {
   margin-right: 5rem;
 }
+@media only screen and (max-width: 36em) {
+  .productos__contenedor__submenu--link:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+}
+@media only screen and (max-width: 48em) {
+  .productos__contenedor__submenu--link {
+    font-size: 1.6rem;
+  }
+}
 .productos__contenedor__box {
   display: flex;
   flex-wrap: wrap;
@@ -737,6 +823,11 @@ span {
 @media only screen and (max-width: 62em) {
   .productos__contenedor__box__item {
     width: 50%;
+  }
+}
+@media only screen and (max-width: 36em) {
+  .productos__contenedor__box__item {
+    width: 100%;
   }
 }
 .productos__contenedor__box__item__etiquetas {

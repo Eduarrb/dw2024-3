@@ -37,6 +37,9 @@ html {
     */
     font-size: 62.5%; // => fuente base de 10px
     font-family: $font-khula;
+    @media only screen and (max-width: $bp-small) {
+        font-size: 50%; // 8px
+    }
 }
 
 a {
