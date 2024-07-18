@@ -6,7 +6,8 @@
 let welcomeNav = document.querySelector('.nav__welcome');
 let searchNav = document.querySelector('.nav__search');
 // console.log(searchNav);
-
+let iconMenu = document.querySelector('.nav__menu__contenedor--iconMenu');
+let menu = document.querySelector('.nav__menu__contenedor__right__box');
 
 window.addEventListener('scroll', function(){
     // console.log('hiciste scroll');
@@ -24,3 +25,14 @@ window.addEventListener('scroll', function(){
     }
 })
 
+iconMenu.addEventListener('click', function(e){
+    // console.log('hiciste click');
+    // console.log(e);
+    e.preventDefault();
+    // if(menu.classList.contains('active')){
+
+    // } else {
+        
+    // }
+    menu.classList.toggle('active');
+})
