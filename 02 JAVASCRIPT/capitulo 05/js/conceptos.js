@@ -1,4 +1,3 @@
-
 // ⚡⚡ EJECUCIONES ASINCORNAS ⚡⚡
 
 setInterval(function(){
