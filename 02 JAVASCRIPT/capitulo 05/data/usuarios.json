@@ -1,0 +1,13 @@
+{
+    "persona1": {
+        "nombre": "Eduardo",
+        "apellido": "Arroyo",
+        "dni": "12345678",
+        "estadoCivil": "Casado"
+    },
+    "persona2": {
+        "nombre": "Carlos",
+        "apellido": "Guerra",
+        "mascotas": ["gato", "perro"]
+    }
+}
