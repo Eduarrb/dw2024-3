@@ -21,3 +21,12 @@ ALTER TABLE peliculas
     ADD CONSTRAINT fk_direId FOREIGN KEY (peli_dire_id)
     REFERENCES directores (dire_id)
     ON DELETE RESTRICT ON UPDATE RESTRICT
+
+DELETE FROM directores WHERE dire_id = 1
+
+ALTER TABLE peliculas DROP CONSTRAINT fk_direId
+
+ALTER TABLE peliculas
+    ADD CONSTRAINT fk_direId FOREIGN KEY (peli_dire_id)
+    REFERENCES directores (dire_id)
+    ON DELETE CASCADE ON UPDATE CASCADE
