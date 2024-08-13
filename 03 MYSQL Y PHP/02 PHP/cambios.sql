@@ -1,0 +1,1 @@
+ALTER TABLE peliculas ADD COLUMN peli_img TEXT NOT NULL AFTER peli_nombre
