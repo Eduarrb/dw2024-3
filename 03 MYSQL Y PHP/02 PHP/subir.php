@@ -1,4 +1,7 @@
-<?php require_once("db.php"); ?>
+<?php 
+    require_once("db.php"); 
+    ob_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -76,6 +79,8 @@
                     // echo $peli_img;
                     $queryGuardar = "INSERT INTO peliculas (peli_dire_id, peli_nombre, peli_img, peli_genero, peli_fechaEstreno, peli_restricciones) VALUES ({$peli_dire_id}, '{$peli_nombre}', '{$peli_img}', '{$peli_genero}', '{$peli_fechaEstreno}', '{$peli_restricciones}')";
                     mysqli_query($conexion, $queryGuardar);
+
+                    header("Location: ./");
                 }
             ?>
         </div>

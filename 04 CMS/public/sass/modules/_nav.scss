@@ -1,0 +1,202 @@
+.nav {
+    position: fixed; // 0.1
+    z-index: 1;
+    width: 100%;
+    &__welcome {
+        background-color: #f4f4f4;
+        &__contenedor {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.4rem;
+            align-items: center;
+            @media only screen and (max-width: $bp-small) {
+                justify-content: center;
+            }
+            &--msj {
+                color: $color-secondary;
+                @media only screen and (max-width: $bp-small) {
+                    display: none;
+                }
+            }
+            &__access {
+                &--account {
+                    color: $color-secondary;
+                    i {
+                        margin-right: .5rem;
+                    }
+                }
+                &--moneda,
+                &--idioma {
+                    border: none;
+                    outline: 0;
+                    cursor: pointer;
+                    background-color: #f4f4f4;
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+    &__menu {
+        background-color: white;
+        box-shadow: 0 .5rem 1.5rem rgba(black, .15);
+        &__contenedor {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img {
+                @media only screen and (max-width: $bp-large) {
+                    width: 12rem;
+                }
+            }
+            &--iconMenu {
+                font-size: 1.8rem;
+                color: $color-secondary;
+                border: 1px solid $color-secondary;
+                padding: 1rem 1.5rem .5rem 1.5rem;
+                border-radius: .5rem;
+                background-color: white;
+                display: none;
+                @media only screen and (max-width: $bp-large) {
+                    display: block;
+                    z-index: 2;
+                }
+            }
+            &__right {
+                display: flex;
+                align-items: center;
+                &__box {
+                    display: flex;
+                    margin-right: 7rem;
+                    @media only screen and (max-width: $bp-large) {
+                        // display: none;
+                        position: absolute;
+                        background-color: rgba(black, .95);
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100vh;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 1;
+                        transition: all .3s;
+                        &.active {
+                            left: 0;
+                            transition: all .3s;
+                        }
+                    }
+                    &__item {
+                        list-style: none;
+                        &--link {
+                            font-size: 1.5rem;
+                            text-transform: uppercase;
+                            color: $color-secondary;
+                            padding: 1.1rem 1.5rem .6rem 1.5rem;
+                            font-weight: 700;
+                            @media only screen and (max-width: $bp-large){
+                                color: white;
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+                &__cart {
+                    background-color: $color-primary;
+                    color: white;
+                    padding: 1.5rem 2.5rem .5rem 2.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    &--box {
+                        position: relative;
+                        margin-bottom: .7rem;
+                        i {
+                            font-size: 2.5rem;
+                        }
+                        span {
+                            font-size: 1.6rem;
+                            position: absolute;
+                            width: 2.5rem;
+                            height: 2.5rem;
+                            background-color: $color-secondary;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            top: -1rem;
+                            padding-top: 0.35rem;
+                            // right: -1.2rem;
+                            left: 3rem;
+                        }
+                    }
+                    &--title {
+                        margin-bottom: -.5rem;
+                    }
+                    &--title,
+                    &--price {
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+    &__search {
+        background-color: $color-secondary;
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+        }
+        &__contenedor {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__categoria {
+                background-color: $color-primary;
+                color: white;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                padding: 2rem 2rem 1.7rem 2rem;
+                font-weight: 600;
+            }
+            &__form {
+                background-color: white;
+                display: flex;
+                align-items: center;
+                font-size: 1.3rem;
+                width: 50%;
+                border-radius: .5rem;
+                overflow: hidden;
+                @media only screen and (max-width: $bp-large) {
+                    display: none;
+                }
+                input,
+                select {
+                    border: none;
+                    outline: 0;
+                    padding: 1.5rem 2rem 1.2rem 2rem;
+                    color: $color-secondary-light;
+                }
+                input {
+                    border-right: 1px solid rgba(black, .2);
+                    width: 100%;
+                }
+                select {
+                    appearance: none;
+                }
+                i {
+                    color: $color-secondary-light;
+                }
+            }
+            &__phone {
+                font-size: 1.6rem;
+                i {
+                    color: $color-primary;
+                }
+                span {
+                    color: white;
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+}

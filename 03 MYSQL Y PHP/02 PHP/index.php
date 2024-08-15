@@ -12,7 +12,7 @@
     <section class="container">
         <div class="row p-4">
             <a href="subir.php" class="btn btn-success mr-2">Subir Pelicula</a>
-            <a href="#" class="btn btn-info">Directores</a>
+            <a href="directores.php" class="btn btn-info">Directores</a>
         </div>
         <div class="row">
             <!-- 
@@ -48,7 +48,7 @@
                 //     echo "Fallo en la conexion";
                 // }
 
-                $consulta = "SELECT * FROM peliculas a INNER JOIN directores b ON a.peli_dire_id = b.dire_id";
+                $consulta = "SELECT * FROM peliculas a LEFT JOIN directores b ON a.peli_dire_id = b.dire_id";
                 $query_res = mysqli_query($conexion, $consulta);
                 /*
                 echo "<pre>";
@@ -74,7 +74,7 @@
                     ?>
 
                         <div class="col-md-3 mb-3">
-                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Oppenheimer_%28film%29.jpg/220px-Oppenheimer_%28film%29.jpg" alt="" style="width: 100%">
+                            <img src="<?php echo $fila['peli_img']; ?>" alt="<?php echo $fila['peli_nombre']; ?>" style="width: 100%">
                             <h4>
                                 <?php echo $fila["peli_nombre"]; ?>
                             </h4>
@@ -85,11 +85,10 @@
                                 <strong>Rating: </strong><?php echo $fila['peli_restricciones']; ?>
                             </div>
                             <div>
-                                <a href="#" class="btn btn-success">editar</a>
-                                <a href="#" class="btn btn-danger">borrar</a>
+                                <a href="editar.php?id=<?php echo $fila['peli_id']; ?>" class="btn btn-success">editar</a>
+                                <a href="borrar.php?id=<?php echo $fila['peli_id']; ?>" class="btn btn-danger">borrar</a>
                             </div>
                         </div>
-
                 <?php }
 
             ?>
