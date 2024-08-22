@@ -38,14 +38,15 @@
                 }
             } else {
                 registro_usuario($user_nombres, $user_apellidos, $user_email, $user_pass);
-                display_msj("Registro exitoso", "success");
+                set_mensaje(display_msj("Registro satisfactorio. Por favor revisa tu bandeja o spam para activar tu cuenta. Esto puede tardar unos minutos", "success"));
                 redirect("register.php");
             }
         }
     }
 
     function registro_usuario($nombres, $apellidos, $correo, $pass) {
-        query("INSERT INTO usuarios (user_nombres, user_apellidos, user_email, user_pass) VALUES ('{$nombres}', '{$apellidos}', '{$correo}', '{$pass}')");
+        $user_pass = password_hash($pass, PASSWORD_BCRYPT, array('cost' => 12));
+        query("INSERT INTO usuarios (user_nombres, user_apellidos, user_email, user_pass) VALUES ('{$nombres}', '{$apellidos}', '{$correo}', '{$user_pass}')");
         // send_email()
     }
 ?>
