@@ -19,6 +19,10 @@ DELIMITER;
         return mysqli_query($conexion, $consulta);
     }
 
+    function fetch_assoc($queryRes) {
+        return mysqli_fetch_assoc($queryRes);
+    }
+
     function contar_filas($query) {
         return mysqli_num_rows($query);
     }

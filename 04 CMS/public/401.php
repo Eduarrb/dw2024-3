@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,7 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>404 Error - SB Admin</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="admin/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -20,10 +20,14 @@
                                 <div class="text-center mt-4">
                                     <h1 class="display-1">401</h1>
                                     <p class="lead">Unauthorized</p>
+                                    <?php
+                                        require_once('../resources/config.php');
+                                        mostrar_msj();
+                                    ?>
                                     <p>Access to this resource is denied.</p>
-                                    <a href="index.html">
+                                    <a href="register.php">
                                         <i class="fas fa-arrow-left me-1"></i>
-                                        Return to Dashboard
+                                        Intenta registrate otra vez
                                     </a>
                                 </div>
                             </div>

@@ -48,7 +48,27 @@
         $user_token = md5($correo);
         $user_pass = password_hash($pass, PASSWORD_BCRYPT, array('cost' => 12));
         query("INSERT INTO usuarios (user_nombres, user_apellidos, user_email, user_pass, user_token) VALUES ('{$nombres}', '{$apellidos}', '{$correo}', '{$user_pass}', '{$user_token}')");
-        $mensaje = "Por favor activa tu cuenta mediante este <a href='http://localhost/dw2024-3/04%20CMS/public/activate.php'>LINK</a>";
+        $mensaje = "Por favor activa tu cuenta mediante este <a href='http://localhost/dw2024-3/04%20CMS/public/activate.php?email={$correo}&token={$user_token}'>LINK</a>";
         send_email($correo, 'Activar cuenta', $mensaje);
+    }
+
+    function activar_usuario() {
+        if(isset($_GET['email']) && isset($_GET['token'])){
+            $user_email = limpiar_string($_GET['email']);
+            $user_token = limpiar_string($_GET['token']);
+
+            $query = query("SELECT user_id FROM usuarios WHERE user_email = '{$user_email}' AND user_token = '{$user_token}'");
+            $fila = fetch_assoc($query);
+            $user_id = $fila['user_id'];
+
+            if(contar_filas($query) == 1){
+                query("UPDATE usuarios SET user_status = 1, user_token = '' WHERE user_id = {$user_id}");
+                set_mensaje(display_msj("su cuenta ha sido activada. Por favor inicie sesión", "success"));
+                redirect("register.php");
+            } else {
+                set_mensaje(display_msj("Los datos no son válidos. Por favor Intente otra vez", "danger"));
+                redirect("401.php");
+            }
+        }
     }
 ?>
