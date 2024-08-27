@@ -10,7 +10,14 @@
             
             <div id="layoutSidenav_content">
                 <main>
-                    
+                    <?php
+                        if(isset($_GET['productos'])){
+                            include(VIEW_BACK . DS . "productos.php");
+                        }
+                        if(isset($_GET['producto-add'])){
+                            include(VIEW_BACK . DS . "producto-add.php");
+                        }
+                    ?>
                 </main>
                 
 <?php include(VIEW_BACK . DS . "footer.php"); ?>
