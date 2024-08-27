@@ -1,3 +1,5 @@
+<?php validarSesion(); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

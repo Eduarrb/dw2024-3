@@ -26,9 +26,9 @@
             
             if(password_verify($pass, $user_pass)) {
                 if($recuerdame == 'on') {
-                    setcookie('email', $email, time() + 360);
+                    setcookie('email', $email, time() + 86400);
                 } else {
-                    setcookie('email', $email, time() + 60);
+                    setcookie('email', $email, time() + 3600);
                 }
 
                 $_SESSION['user_id'] = $user_id;
@@ -45,4 +45,12 @@
         }
     }
 
+    function validarSesion(){
+        if(!isset($_COOKIE['email'])){
+            unset($_SESSION['user_id']);
+            unset($_SESSION['user_nombres']);
+            unset($_SESSION['user_apellidos']);
+            unset($_SESSION['user_rol']);
+        }
+    }
 ?>

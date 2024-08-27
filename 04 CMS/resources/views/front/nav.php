@@ -5,9 +5,22 @@
                     Mensaje de saludo
                 </span>
                 <div class="nav__welcome__contenedor__access">
-                    <a href="#" class="nav__welcome__contenedor__access--account p-1">
-                        <i class="fa-solid fa-user"></i> Mi Cuenta
-                    </a>
+                    <?php
+                        if(!isset($_SESSION['user_rol'])){
+                            ?>
+                                <a href="login.php" class="nav__welcome__contenedor__access--account p-1">
+                                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                                </a>
+                                <a href="register.php" class="nav__welcome__contenedor__access--account p-1">
+                                    <i class="fa-solid fa-user-plus"></i> Register
+                                </a>
+                        <?php } else {
+                            ?>
+                                <a href="#" class="nav__welcome__contenedor__access--account p-1">
+                                    <i class="fa-solid fa-user"></i> Bienvenido(a) <?php echo $_SESSION['user_nombres']; ?>
+                                </a>
+                        <?php }
+                    ?>
                     <select class="nav__welcome__contenedor__access--moneda">
                         <option>USD $</option>
                         <option>PEN S/</option>
@@ -52,11 +65,16 @@
                                 contact
                             </a>
                         </li>
-                        <li class="nav__menu__contenedor__right__box__item">
-                            <a href="#" class="nav__menu__contenedor__right__box__item--link">
-                                about us
-                            </a>
-                        </li>
+                        <?php
+                            if(isset($_SESSION['user_rol']) && $_SESSION['user_rol'] == 'admin'){
+                                ?>
+                                    <li class="nav__menu__contenedor__right__box__item">
+                                        <a href="admin" class="nav__menu__contenedor__right__box__item--link">
+                                            ADMIN
+                                        </a>
+                                    </li>
+                            <?php }
+                        ?>
                     </ul>
                     <a href="#" class="nav__menu__contenedor__right__cart">
                         <div class="nav__menu__contenedor__right__cart--box">

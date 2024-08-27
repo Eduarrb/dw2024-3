@@ -63,8 +63,8 @@
 
             if(contar_filas($query) == 1){
                 query("UPDATE usuarios SET user_status = 1, user_token = '' WHERE user_id = {$user_id}");
-                set_mensaje(display_msj("su cuenta ha sido activada. Por favor inicie sesión", "success"));
-                redirect("register.php");
+                set_mensaje(display_msj("Su cuenta ha sido activada. Por favor inicie sesión", "success"));
+                redirect("login.php");
             } else {
                 set_mensaje(display_msj("Los datos no son válidos. Por favor Intente otra vez", "danger"));
                 redirect("401.php");
