@@ -5,7 +5,7 @@
     </ol>
     <div class="row">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-body">
                     <a href="index.php?producto-add" class="btn btn-primary">
                         <i class="fa-solid fa-plus"></i>    
@@ -13,6 +13,7 @@
                     </a>
                 </div>
             </div>
+            <?php mostrar_msj(); ?>
             <div class="card mt-3">
                 <div class="card-header">
                     <h6 class="text-primary">Lista de productos</h6>
@@ -29,45 +30,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Mando xbox</td>
-                                <td>
-                                    <img src="../img/camara.jpg" alt="camara" width="70">
-                                </td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, aliquam.</td>
-                                <td>S/ 1569.99</td>
-                                <td>20</td>
-                                <td>
-                                    <a href="#" class="btn-outline-success btn btn-sm me-1">edit</a>
-                                    <a href="#" class="btn-outline-danger btn btn-sm">delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Mando xbox</td>
-                                <td>
-                                    <img src="../img/camara.jpg" alt="camara" width="70">
-                                </td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, aliquam.</td>
-                                <td>S/ 1569.99</td>
-                                <td>20</td>
-                                <td>
-                                    <a href="#" class="btn-outline-success btn btn-sm me-1">edit</a>
-                                    <a href="#" class="btn-outline-danger btn btn-sm">delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Mando xbox</td>
-                                <td>
-                                    <img src="../img/camara.jpg" alt="camara" width="70">
-                                </td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, aliquam.</td>
-                                <td>S/ 1569.99</td>
-                                <td>20</td>
-                                <td>
-                                    <a href="#" class="btn-outline-success btn btn-sm me-1">edit</a>
-                                    <a href="#" class="btn-outline-danger btn btn-sm">delete</a>
-                                </td>
-                            </tr>
+                            <?php get_productos(); ?>
                         </tbody>
                     </table>
                 </div>
