@@ -49,12 +49,49 @@
                     <td>S/ {$row['prod_precio']}</td>
                     <td>{$row['prod_canti']}</td>
                     <td>
-                        <a href="#" class="btn-outline-success btn btn-sm me-1">edit</a>
+                        <a href="index.php?producto-edit&id={$row['prod_id']}" class="btn-outline-success btn btn-sm me-1">edit</a>
                         <a href="#" class="btn-outline-danger btn btn-sm">delete</a>
                     </td>
                 </tr>
 DELIMITADOR;
             echo $producto;
+        }
+    }
+
+    function get_productoEdit() {
+        if(!isset($_GET['producto-edit']) && !isset($_GET['id'])){
+            redirect('index.php?productos');
+        } else {
+            $prod_id = limpiar_string($_GET['id']);
+            $producto = query("SELECT * FROM productos WHERE prod_id = {$prod_id}");
+            if(contar_filas($producto) == 0) {
+                set_mensaje(display_msj("El producto no exite", "danger"));
+                redirect("index.php?productos");
+            }
+            return fetch_assoc($producto);
+        }
+    }
+
+    function post_productoEdit($prod_id, $imgAnterior) {
+        if(isset($_POST['edit'])) {
+            $prod_nombre = limpiar_string($_POST['prod_nombre']);
+            $prod_descri = limpiar_string($_POST['prod_descri']);
+            $prod_precio = limpiar_string($_POST['prod_precio']);
+            $prod_canti = limpiar_string($_POST['prod_canti']);
+            $prod_img = $_FILES['prod_img']['name'];  
+            $prod_img_tmp = $_FILES['prod_img']['tmp_name'];
+            
+            if(!empty($prod_img)) {
+                $prod_img = md5(uniqid()) . "." . explode(".", $prod_img)[1];
+                move_uploaded_file($prod_img_tmp, "../img/{$prod_img}");
+                $imgAnteriorLocation = "../img/{$imgAnterior}";
+                unlink($imgAnteriorLocation);
+            } else {
+                $prod_img = $imgAnterior;
+            }
+            query("UPDATE productos SET prod_nombre = '{$prod_nombre}', prod_descri = '{$prod_descri}', prod_precio = {$prod_precio}, prod_canti = {$prod_canti}, prod_img = '{$prod_img}' WHERE prod_id = {$prod_id}");
+            set_mensaje(display_msj("Producto actualizado correctamente", "success"));
+            redirect("index.php?productos");
         }
     }
 ?>

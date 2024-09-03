@@ -17,6 +17,9 @@
                         if(isset($_GET['producto-add'])){
                             include(VIEW_BACK . DS . "producto-add.php");
                         }
+                        if(isset($_GET['producto-edit'])){
+                            include(VIEW_BACK . DS . "producto-edit.php");
+                        }
                     ?>
                 </main>
                 
