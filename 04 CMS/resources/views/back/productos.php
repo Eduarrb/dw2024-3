@@ -29,10 +29,11 @@
                                 <th>Cantidad</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="productos">
                             <?php get_productos(); ?>
                         </tbody>
                     </table>
+                    <?php post_productoDelete(); ?>
                 </div>
             </div>
         </div>

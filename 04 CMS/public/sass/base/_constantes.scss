@@ -23,6 +23,35 @@ $color-secondary-light: rgb(102, 102, 102);
     
 }
 
+.star-yellow {
+    color: #f1c40f;
+  }
+  
+  .btn {
+    font-size: 1.4rem;
+    color: white;
+    padding: 1rem 1.2rem 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .btn-warning {
+    background-color: #f1c40f;
+  }
+  
+  .btn-success {
+    background-color: #1abc9c;
+  }
+  
+  .btn-danger {
+    background-color: #e74c3c;
+  }
+  
+  .btn-secondary {
+    background-color: rgb(51, 51, 51);
+  }
+
 .d-none {
     display: none;
 }

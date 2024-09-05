@@ -29,9 +29,9 @@
                 </div>
                 
                 <form class="producto__container__data__form mt-5" method="post">
-                    <input type="hidden" name="prod_id" value="<?php echo $item['prod_id']; ?>">
+                    <input type="hidden" name="prod_id" value="">
                     <label for="cantidad">Cantidad</label>
-                    <input type="number" name="prod_canti" value="1" min="1" max="<?php echo $item['prod_canti']; ?>">
+                    <input type="number" name="prod_canti" value="1" min="1" max="">
                     <input type="submit" value="Agregar a carrito" name="carritoAdd">
                 </form>
             </div>
@@ -44,8 +44,8 @@
             </h2>
             <?php
                 mostrar_msj();
-                post_carritoAdd();
-                post_enviarComentario($item['prod_id']);
+                // post_carritoAdd();
+                // post_enviarComentario($item['prod_id']);
             ?>
             <form class="comentarios__container__form mt-2" method="post">
                 <div class="comentarios__container__form__group">
@@ -60,7 +60,28 @@
                 </div>
             </form>
             <div class="comentarios__container__box">
-                
+                <div class="comentarios__container__box__item">
+                    <div class="comentarios__container__box__item__imgBox">
+                        <img src="img/user.png" alt="">
+                    </div>
+                    <div class="comentarios__container__box__item__data">
+                        <div class="comentarios__container__box__item__data__top">
+                            <span>Eduardo Arroyo</span>
+                            <span>6 jul 2024</span>
+                        </div>
+                        <p class="comentarios__container__box__item__data__descri mt-1">
+                            Buen producto
+                        </p>
+                        <div class="comentarios__container__box__item__data__stars mt-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

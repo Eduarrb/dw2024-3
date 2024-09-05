@@ -50,7 +50,7 @@
                     <td>{$row['prod_canti']}</td>
                     <td>
                         <a href="index.php?producto-edit&id={$row['prod_id']}" class="btn-outline-success btn btn-sm me-1">edit</a>
-                        <a href="#" class="btn-outline-danger btn btn-sm">delete</a>
+                        <a href="#" class="btn-outline-danger btn btn-sm delete" data-delete="{$row['prod_id']}">delete</a>
                     </td>
                 </tr>
 DELIMITADOR;
@@ -91,6 +91,16 @@ DELIMITADOR;
             }
             query("UPDATE productos SET prod_nombre = '{$prod_nombre}', prod_descri = '{$prod_descri}', prod_precio = {$prod_precio}, prod_canti = {$prod_canti}, prod_img = '{$prod_img}' WHERE prod_id = {$prod_id}");
             set_mensaje(display_msj("Producto actualizado correctamente", "success"));
+            redirect("index.php?productos");
+        }
+    }
+
+    function post_productoDelete(){
+        if(isset($_GET['delete'])) {
+            // echo 'si esta el parametro';
+            $prod_id = limpiar_string($_GET['delete']);
+            query("DELETE FROM productos WHERE prod_id = {$prod_id}");
+            set_mensaje(display_msj("Producto eliminado correctamente", "success"));
             redirect("index.php?productos");
         }
     }
