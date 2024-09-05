@@ -43,7 +43,7 @@
                 Comentarios
             </h2>
             <?php
-                mostrar_msj();
+                post_enviarComentario($row['prod_id']);
             ?>
             <form class="comentarios__container__form mt-2" method="post">
                 <div class="comentarios__container__form__group">
@@ -83,7 +83,18 @@
             </div>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="js/comentarios.js"></script>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        <?php
+            // $msj = $_SESSION['mensaje'];
+        ?>
+        if('') {
+            Swal.fire({
+                title: "The Internet?",
+                text: "That thing is still around?",
+                icon: "success"
+            });
+        }
+    </script>
     <?php include(VIEW_FRONT . DS . "footer.php"); ?>

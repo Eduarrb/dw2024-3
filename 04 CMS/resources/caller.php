@@ -6,6 +6,7 @@
     require_once("controllers/productosController.php");
 
     require_once("controllers/landingControllers/productosLandController.php");
+    require_once("controllers/landingControllers/comentariosLandController.php");
 
     
 ?>
