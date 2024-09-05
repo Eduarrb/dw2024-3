@@ -41,7 +41,7 @@
                 <div class="nav__menu__contenedor__right">
                     <ul class="nav__menu__contenedor__right__box">
                         <li class="nav__menu__contenedor__right__box__item">
-                            <a href="#" class="nav__menu__contenedor__right__box__item--link">
+                            <a href="./" class="nav__menu__contenedor__right__box__item--link">
                                 home
                             </a>
                         </li>

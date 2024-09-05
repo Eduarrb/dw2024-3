@@ -24,7 +24,7 @@
                                 S/ {$row['prod_precio']}
                             </span>
                         </div>
-                        <a href="producto.php" class="productos__contenedor__box__item--btn">
+                        <a href="producto.php?id={$row['prod_id']}" class="productos__contenedor__box__item--btn">
                             VER MÁS
                         </a>
                     </article>
@@ -36,4 +36,18 @@ DELIMITADOR;
         }
     }
 
+
+    function get_productoLand() {
+        if(!isset($_GET['id']) || empty($_GET['id'])) {
+            redirect("./");
+        } else {
+            $id = limpiar_string($_GET['id']);
+            $query = query("SELECT * FROM productos WHERE prod_id = {$id}");
+            if(contar_filas($query) == 0) {
+                redirect("./");
+            } else {
+                return fetch_assoc($query);
+            }
+        }
+    }
 ?>

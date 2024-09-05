@@ -6,15 +6,15 @@
 
     <section class="producto">
         <div class="producto__container contenedor">
+            <?php $row = get_productoLand(); ?>
             <div class="producto__container__imgBox">
-                <img src="img/21a916a061a8d1fef5353cddf5b1a72c.jpg" alt="">
+                <img src="img/<?php echo $row['prod_img']; ?>" alt="<?php echo $row['prod_nombre']; ?>">
             </div>
             <div class="producto__container__data">
                 <h3 class="producto__container__data__titulo">
-                    Lampara
+                    <?php echo $row['prod_nombre']; ?>
                 </h3>
                 <div class="producto__container__data_stars mt-2">
-                    
                     <i class="fa-regular fa-star star-yellow"></i>
                     <i class="fa-regular fa-star star-yellow"></i>
                     <i class="fa-regular fa-star star-yellow"></i>
@@ -22,10 +22,10 @@
                     <i class="fa-regular fa-star star-yellow"></i>
                 </div>
                 <div class="producto__container__data__precio mt-4">
-                    S/ 1000           
+                    S/ <?php echo $row['prod_precio']; ?>          
                 </div>
                 <div class="producto__container__data__descri mt-4">
-                   decri
+                    <?php echo $row['prod_descri']; ?>
                 </div>
                 
                 <form class="producto__container__data__form mt-5" method="post">
@@ -44,8 +44,6 @@
             </h2>
             <?php
                 mostrar_msj();
-                // post_carritoAdd();
-                // post_enviarComentario($item['prod_id']);
             ?>
             <form class="comentarios__container__form mt-2" method="post">
                 <div class="comentarios__container__form__group">
