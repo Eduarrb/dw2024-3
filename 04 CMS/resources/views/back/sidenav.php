@@ -16,6 +16,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
                                 Productos
                             </a>
+                            <a class="nav-link" href="index.php?comentarios">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-envelope"></i></div>
+                                Comentarios
+                            </a>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Layouts

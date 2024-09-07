@@ -105,6 +105,25 @@ span {
   display: none;
 }
 
+.alert {
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.success {
+  background-color: rgba(26, 188, 156, 0.3);
+  color: #16a085;
+  border: 1px solid rgba(22, 160, 133, 0.5);
+}
+
+.danger {
+  background-color: rgba(231, 76, 60, 0.3);
+  color: #c0392b;
+  border: 1px solid rgba(192, 57, 43, 0.5);
+}
+
 .p-1 {
   padding: 1rem;
 }

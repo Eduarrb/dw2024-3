@@ -20,6 +20,9 @@
                         if(isset($_GET['producto-edit'])){
                             include(VIEW_BACK . DS . "producto-edit.php");
                         }
+                        if(isset($_GET['comentarios'])){
+                            include(VIEW_BACK . DS . "comentarios.php");
+                        }
                     ?>
                 </main>
                 
