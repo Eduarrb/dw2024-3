@@ -85,4 +85,7 @@
         </div>
     </section>
     
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/comentarios.js"></script>
+
     <?php include(VIEW_FRONT . DS . "footer.php"); ?>

@@ -22,8 +22,10 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php get_comentarios() ?>
                         </tbody>
                     </table>
+                    <?php post_aprobarComentario(); ?>
                 </div>
             </div>
         </div>
