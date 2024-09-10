@@ -42,7 +42,7 @@ DELIMITADOR;
             redirect("./");
         } else {
             $id = limpiar_string($_GET['id']);
-            $query = query("SELECT * FROM productos WHERE prod_id = {$id}");
+            $query = query("SELECT *, COUNT(b.com_prod_id) AS total_com, SUM(b.com_puntaje) AS suma FROM productos a LEFT JOIN comentarios b ON a.prod_id = b.com_prod_id WHERE prod_id = {$id}");
             if(contar_filas($query) == 0) {
                 redirect("./");
             } else {

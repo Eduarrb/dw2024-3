@@ -13,6 +13,17 @@ const fechaOptions = {
 const renderComentarios = objComentario => {
     const fecha = new Date(objComentario.com_fecha);
 
+    let plantillaEstrellas = '';
+
+    for(let i = 0; i < +objComentario.com_puntaje; i++) {
+        plantillaEstrellas += '<i class="fa-solid fa-star"></i>';
+    }
+    if(+objComentario.com_puntaje !== 5) {
+        for(let j = 0; j < 5 - +objComentario.com_puntaje; j++) {
+            plantillaEstrellas += '<i class="fa-regular fa-star star-yellow"></i>';
+        }
+    }
+
     return `
         <div class="comentarios__container__box__item">
             <div class="comentarios__container__box__item__imgBox">
@@ -27,12 +38,7 @@ const renderComentarios = objComentario => {
                     ${objComentario.com_mensaje}
                 </p>
                 <div class="comentarios__container__box__item__data__stars mt-1">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    ${plantillaEstrellas}
                 </div>
             </div>
         </div>

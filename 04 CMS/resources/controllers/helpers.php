@@ -63,4 +63,11 @@ DELIMITADOR;
         }
     }
 
+    function validarLogIn() {
+        if(!isset($_SESSION['user_id'])) {
+            set_mensaje(display_msj("Debes iniciar sesion para poder continuar con el proceso", "danger"));
+            return redirect("login.php");
+        }
+    }
+
 ?>

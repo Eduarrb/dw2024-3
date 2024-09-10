@@ -46,3 +46,10 @@ ALTER TABLE comentarios
     ADD CONSTRAINT fk_prodId FOREIGN KEY (com_prod_id)
     REFERENCES productos (prod_id)
     ON DELETE RESTRICT ON UPDATE CASCADE
+
+CREATE TABLE carrito (
+    cart_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    cart_user_id INT UNSIGNED NOT NULL,
+    cart_prod_id INT UNSIGNED NOT NULL,
+    cart_canti INT NOT NULL
+)

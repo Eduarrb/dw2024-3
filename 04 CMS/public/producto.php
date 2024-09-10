@@ -15,11 +15,26 @@
                     <?php echo $row['prod_nombre']; ?>
                 </h3>
                 <div class="producto__container__data_stars mt-2">
-                    <i class="fa-regular fa-star star-yellow"></i>
-                    <i class="fa-regular fa-star star-yellow"></i>
-                    <i class="fa-regular fa-star star-yellow"></i>
-                    <i class="fa-regular fa-star star-yellow"></i>
-                    <i class="fa-regular fa-star star-yellow"></i>
+                    <?php
+                        if($row['total_com'] != 0) {
+                            $puntaje = round($row['suma'] / $row['total_com']);
+                            for($i = 0; $i < $puntaje; $i++) {
+                                echo '<i class="fa-solid fa-star star-yellow"></i>';
+                            }
+                            if($puntaje != 5) {
+                                for($j = 0; $j < 5 - $puntaje; $j++) {
+                                    echo '<i class="fa-regular fa-star star-yellow"></i>';
+                                }
+                            }
+                        } else {
+                            ?>
+                                <i class="fa-regular fa-star star-yellow"></i>
+                                <i class="fa-regular fa-star star-yellow"></i>
+                                <i class="fa-regular fa-star star-yellow"></i>
+                                <i class="fa-regular fa-star star-yellow"></i>
+                                <i class="fa-regular fa-star star-yellow"></i>
+                        <?php }
+                    ?>
                 </div>
                 <div class="producto__container__data__precio mt-4">
                     S/ <?php echo $row['prod_precio']; ?>          
@@ -29,9 +44,9 @@
                 </div>
                 
                 <form class="producto__container__data__form mt-5" method="post">
-                    <input type="hidden" name="prod_id" value="">
+                    <input type="hidden" name="prod_id" value="<?php echo $row['prod_id']; ?>">
                     <label for="cantidad">Cantidad</label>
-                    <input type="number" name="prod_canti" value="1" min="1" max="">
+                    <input type="number" name="prod_canti" value="1" min="1" max="<?php echo $row['prod_canti']; ?>">
                     <input type="submit" value="Agregar a carrito" name="carritoAdd">
                 </form>
             </div>
@@ -44,6 +59,7 @@
             </h2>
             <?php
                 mostrar_msj();
+                post_carritoAdd();
                 post_enviarComentario($row['prod_id']);
             ?>
             <form class="comentarios__container__form mt-2" method="post">
