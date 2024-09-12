@@ -76,16 +76,19 @@
                             <?php }
                         ?>
                     </ul>
-                    <a href="#" class="nav__menu__contenedor__right__cart">
+                    <a href="cart.php" class="nav__menu__contenedor__right__cart">
+                        <?php $row = validarCarrito(); ?>
                         <div class="nav__menu__contenedor__right__cart--box">
                             <i class="fa-solid fa-cart-shopping"></i>
-                            <span>2</span>
+                            <span>
+                                <?php echo $row['canti']; ?>
+                            </span>
                         </div>
                         <span class="nav__menu__contenedor__right__cart--title">
                             My Cart
                         </span>
                         <span class="nav__menu__contenedor__right__cart--price">
-                            S/ 54.99
+                            S/ <?php echo $row['total'] ? $row['total'] : '0.00'; ?>
                         </span>
                     </a>
                 </div>

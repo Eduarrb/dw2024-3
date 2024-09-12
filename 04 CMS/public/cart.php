@@ -19,23 +19,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <img src="img/07ca463b933f044e5a06b2f105dc2121.jpg" alt="{$fila['prod_nombre']}">
-                        </td>
-                        <td>Lampara</td>
-                        <td>S/ 99.99</td>
-                        <td>1</td>
-                        <td>S/ 99.99</td>
-                        <td>
-                            <a href="#" class="btn btn-warning"><i class="fa-solid fa-minus"></i></a>
-                            <a href="#" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
-                            <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
-                        </td>
-                    </tr>
+                    <?php get_mostrarItemsCarrito() ?>
                 </tbody>
             </table>
-
+            
+            <?php 
+                carritoAumentar();
+                carritoRestar();
+            ?>
 
         </div>
     </section>
