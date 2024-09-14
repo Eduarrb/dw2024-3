@@ -19,17 +19,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php get_mostrarItemsCarrito() ?>
+                    <?php $data = get_mostrarItemsCarrito() ?>
                 </tbody>
             </table>
+
+            <div class="mt-3">
+                <a href="<?php echo $data[1]; ?>" class="btn btn-success">REALIZAR PAGO</a>
+            </div>
             
-            <?php 
+            <?php
                 carritoAumentar();
                 carritoRestar();
+                carritoBorrar();
             ?>
 
         </div>
     </section>
-
 
     <?php include(VIEW_FRONT . DS . "footer.php"); ?>

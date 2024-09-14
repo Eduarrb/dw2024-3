@@ -33,6 +33,14 @@
         }
     }
 
+
+    require_once 'vendor/autoload.php';
+    use MercadoPago\MercadoPagoConfig;
+    use MercadoPago\Client\Preference\PreferenceClient;
+    MercadoPagoConfig::setAccessToken("access token aqui");
+
+    $client = new PreferenceClient();
+
     function get_mostrarItemsCarrito() {
         validarLogIn();
         $query = query("SELECT * FROM carrito a INNER JOIN productos b ON a.cart_prod_id = b.prod_id WHERE a.cart_user_id = {$_SESSION['user_id']}");
@@ -53,7 +61,7 @@
                         <td>
                             <a href="cart.php?restar={$row['cart_id']}" class="btn btn-warning"><i class="fa-solid fa-minus"></i></a>
                             <a href="cart.php?aumentar={$row['cart_id']}" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
-                            <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                            <a href="cart.php?borrar={$row['cart_id']}" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                         </td>
                     </tr>
 DELIMITADOR;
@@ -68,6 +76,38 @@ DELIMITADOR;
                 </tr>
 DELIMITADOR;
             echo $trTotal;
+
+            global $client;
+
+            $preference = $client->create([
+                "items"=> array(
+                    array(
+                        "title" => "Total a pagar",
+                        "quantity" => 1,
+                        "unit_price" => $total,
+                        "currency_id" => "PE"
+                    )
+                  ),
+                  "back_urls" => array(
+                      "success" => "http://localhost/dw2024-3/04%20CMS/public/success.php",
+                      "failure" => "http://localhost/dw2024-3/04%20CMS/public/failure.php",
+                      "pending" => "http://localhost/dw2024-3/04%20CMS/public/pending.php",
+                  ),
+                  "auto_return" => "approved"
+
+              ]);
+            // print_r($preference);
+            return [$preference->id, $preference->sandbox_init_point];
+        }
+    }
+
+    function carritoBorrar() {
+        if(isset($_GET['borrar'])) {
+            validarLogin();
+            $cart_id = limpiar_string($_GET['borrar']);
+            query("DELETE FROM carrito WHERE cart_id = {$cart_id}");
+            set_mensaje(display_msjLand("El item fue retirado del carrito correctamente", "success"));
+            redirect("cart.php");
         }
     }
 
