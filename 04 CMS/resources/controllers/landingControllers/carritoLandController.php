@@ -37,7 +37,7 @@
     require_once 'vendor/autoload.php';
     use MercadoPago\MercadoPagoConfig;
     use MercadoPago\Client\Preference\PreferenceClient;
-    MercadoPagoConfig::setAccessToken("access token aqui");
+    MercadoPagoConfig::setAccessToken("TEST-3354446792136437-091321-d2f03b6cdcc2b576609eb0054e905d6c-160252421");
 
     $client = new PreferenceClient();
 
