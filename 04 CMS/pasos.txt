@@ -61,3 +61,64 @@ cat ~/.ssh/id_rsa
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
 
 </VirtualHost>
+
+--------------------------------------------------------------
+Instalacion de certificado ssl
+------------------------------
+sudo apt install certbot python3-certbot-apache
+sudo apt-get update
+sudo certbot --apache
+
+
+funcion sendgrid
+----------------
+
+   function send_email($email, $asunto, $mensaje, $name = ''){
+    $email = $email;
+    $name = $name;
+    $body = "
+        <h3>$asunto</h3>
+        <br>
+        <p>$mensaje</p>
+        <br>
+    ";
+
+    $headers = array(
+        'Authorization: Bearer <apikey>',
+        'Content-Type: application/json'
+    );
+
+    $data = array(
+        "personalizations" => array(
+            array(
+                "to" => array(
+                    array(
+                        "email" => $email,
+                        "name" => $name
+                    )
+                )
+            )
+        ),
+        "from" => array(
+            "email" => "noreply@cms2024-2.xyz"
+        ),
+        "subject" => $asunto,
+        "content" => array(
+            array(
+                "type" => "text/html",
+                "value" => $body
+            )
+        )
+    );
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://api.sendgrid.com/v3/mail/send");
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    echo $response;
+}
